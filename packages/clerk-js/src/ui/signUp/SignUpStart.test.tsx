@@ -145,13 +145,13 @@ describe('<SignUpStart/>', () => {
   it('renders the start screen, types the name, email, and password and creates a sign up attempt', async () => {
     render(<SignUpStart />);
 
-    userEvent.type(screen.getByLabelText('First name'), 'John');
-    userEvent.type(screen.getByLabelText('Last name'), 'Doe');
-    userEvent.type(screen.getByLabelText('Username'), 'jdoe');
-    userEvent.type(screen.getByLabelText('Email address'), 'jdoe@example.com');
-    userEvent.type(screen.getByLabelText('Password'), 'p@ssW0rd');
+    await userEvent.type(screen.getByLabelText('First name'), 'John');
+    await userEvent.type(screen.getByLabelText('Last name'), 'Doe');
+    await userEvent.type(screen.getByLabelText('Username'), 'jdoe');
+    await userEvent.type(screen.getByLabelText('Email address'), 'jdoe@example.com');
+    await userEvent.type(screen.getByLabelText('Password'), 'p@ssW0rd');
 
-    userEvent.click(screen.getByRole('button', { name: 'Sign up' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Sign up' }));
 
     await waitFor(() => {
       expect(mockCreateRequest).toHaveBeenCalledTimes(1);
@@ -176,7 +176,7 @@ describe('<SignUpStart/>', () => {
 
       const regex = new RegExp(`Sign up with ${providerTitle}`, 'i');
 
-      userEvent.click(
+      await userEvent.click(
         screen.getByRole('button', {
           name: regex,
         }),
@@ -503,7 +503,7 @@ describe('<SignUpStart/>', () => {
           });
 
           // Submit the form
-          userEvent.click(screen.getByRole('button', { name: 'Sign up' }));
+          await userEvent.click(screen.getByRole('button', { name: 'Sign up' }));
           await waitFor(() => {
             expect(mockSetSession).toHaveBeenCalled();
           });
@@ -703,7 +703,7 @@ describe('<SignUpStart/> Progressive Sign Up', () => {
     expect(screen.getByText('Phone number')).toBeInTheDocument();
   });
 
-  it('renders optional email/phone input if email OR phone', () => {
+  it('renders optional email/phone input if email OR phone', async () => {
     mockUserSettings = new UserSettings({
       ...mockUserSettingsProgressive,
       attributes: {
@@ -724,7 +724,7 @@ describe('<SignUpStart/> Progressive Sign Up', () => {
     render(<SignUpStart />);
 
     expect(screen.getByText('Email address')).toBeInTheDocument();
-    userEvent.click(screen.getByText('Use phone instead'));
+    await userEvent.click(screen.getByText('Use phone instead'));
     expect(screen.getByText('Phone number')).toBeInTheDocument();
   });
   it('renders required phone & optional email inputs', () => {

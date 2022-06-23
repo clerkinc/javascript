@@ -234,17 +234,32 @@ exports[`<PhoneInput/> renders the phone input when the dropdown is open 1`] = `
           <option
             value="us"
           >
-            🇺🇸 United States (+1)
+            🇺🇸
+             
+            United States
+             (+
+            1
+            )
           </option>
           <option
             value="gb"
           >
-            🇬🇧 United Kingdom (+44)
+            🇬🇧
+             
+            United Kingdom
+             (+
+            44
+            )
           </option>
           <option
             value="in"
           >
-            🇮🇳 India (+91)
+            🇮🇳
+             
+            India
+             (+
+            91
+            )
           </option>
         </select>
       </div>
