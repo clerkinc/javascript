@@ -1,6 +1,6 @@
 {
   "name": "@clerk/nextjs",
-  "version": "3.8.0",
+  "version": "4.0.0-next.8",
   "license": "MIT",
   "description": "Clerk.dev SDK for NextJS",
   "keywords": [
@@ -32,10 +32,10 @@
     "dev": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^3.5.0",
-    "@clerk/clerk-sdk-node": "^3.8.6",
-    "@clerk/edge": "^1.6.1",
-    "@clerk/types": "^2.20.0",
+    "@clerk/clerk-react": "^4.0.0-next.8",
+    "@clerk/clerk-sdk-node": "^4.0.0-next.1",
+    "@clerk/edge": "^1.7.0-next.0",
+    "@clerk/types": "^3.0.0-next.7",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
@@ -59,12 +59,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "bugs": {
+    "url": "https://github.com/clerkinc/javascript/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/clerkinc/javascript.git"
-  },
-  "bugs": {
-    "url": "https://github.com/clerkinc/javascript/issues"
   },
   "homepage": "https://clerk.dev/"
 }

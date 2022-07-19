@@ -1,7 +1,7 @@
-export const colors = Object.freeze({
-  transparent: 'transparent',
-  white: 'white',
-  black: 'black',
+export const whiteAlpha = Object.freeze({
+  whiteAlpha20: 'rgba(255, 255, 255, 0.02)',
+  whiteAlpha50: 'rgba(255, 255, 255, 0.04)',
+  whiteAlpha100: 'rgba(255, 255, 255, 0.06)',
   whiteAlpha200: 'rgba(255, 255, 255, 0.08)',
   whiteAlpha300: 'rgba(255, 255, 255, 0.16)',
   whiteAlpha400: 'rgba(255, 255, 255, 0.24)',
@@ -10,6 +10,10 @@ export const colors = Object.freeze({
   whiteAlpha700: 'rgba(255, 255, 255, 0.64)',
   whiteAlpha800: 'rgba(255, 255, 255, 0.80)',
   whiteAlpha900: 'rgba(255, 255, 255, 0.92)',
+} as const);
+
+export const blackAlpha = Object.freeze({
+  blackAlpha20: 'rgba(0, 0, 0, 0.02)',
   blackAlpha50: 'rgba(0, 0, 0, 0.04)',
   blackAlpha100: 'rgba(0, 0, 0, 0.06)',
   blackAlpha200: 'rgba(0, 0, 0, 0.08)',
@@ -20,8 +24,28 @@ export const colors = Object.freeze({
   blackAlpha700: 'rgba(0, 0, 0, 0.64)',
   blackAlpha800: 'rgba(0, 0, 0, 0.80)',
   blackAlpha900: 'rgba(0, 0, 0, 0.92)',
-  primary50: '#99ADF8',
-  primary100: '#BCC9FA',
+} as const);
+
+export const colors = Object.freeze({
+  // Colors that are not affected by `alphaShadesMode`
+  avatarBorder: blackAlpha.blackAlpha200,
+  avatarBackground: blackAlpha.blackAlpha500,
+  modalBackdrop: blackAlpha.blackAlpha700,
+  activeDeviceBackground: whiteAlpha.whiteAlpha200,
+  // Themable colors
+  ...blackAlpha,
+  ...whiteAlpha,
+  colorBackground: 'white',
+  colorInputBackground: 'white',
+  colorText: 'black',
+  colorTextOnPrimaryBackground: 'white',
+  colorTextSecondary: 'rgba(0,0,0,0.65)',
+  colorInputText: 'black',
+  transparent: 'transparent',
+  white: 'white',
+  black: 'black',
+  primary50: '#f0f3ff',
+  primary100: '#d1dcff',
   primary200: '#91A7F7',
   primary300: '#6684F5',
   primary400: '#3B62F2',
@@ -45,7 +69,7 @@ export const colors = Object.freeze({
   warning200: '#FAE28F',
   warning300: '#F8D763',
   warning400: '#F6CC37',
-  warning500: '#F4C10B',
+  warning500: '#dca900',
   warning600: '#C49A08',
   warning700: '#937406',
   warning800: '#624D04',
@@ -60,5 +84,4 @@ export const colors = Object.freeze({
   success700: '#207920',
   success800: '#155115',
   success900: '#0B280B',
-  cardBackground: 'white',
 } as const);
